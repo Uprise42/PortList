@@ -1,0 +1,14 @@
+var values = new Array(portSheet.getLastRow() - 1);
+  for (i = 2; i <= portSheet.getLastRow(); i++){
+    range = portSheet.getRange(i, 8);
+    values[i-2] = range.getValue();
+  }
+  for (i = 0; i <= values.length; i++){
+    if (values[i] == "Confirmed"){
+      values[i] = "X-Confirmed";
+    }
+  }
+  for (i = 2; i <= portSheet.getLastRow(); i++) {
+    range = portSheet.getRange(i, 8).setValue(values[i-2]);
+  }
+}

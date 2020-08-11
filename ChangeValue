@@ -1,6 +1,0 @@
-for (i = 2; i <= portSheet.getLastRow(); i++){
-    range = portSheet.getRange(i, 8)
-    if (range.getValue() == "Confirmed"){
-      range.setValue('X-Confirmed');
-    }
-  }

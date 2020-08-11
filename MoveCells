@@ -1,0 +1,19 @@
+for (i = 2; i <= portSheet.getLastRow(); i++) {
+    range = portSheet.getRange(i, 8);
+    var values;
+    if (range.getValue() == "Canceled") {
+      range = portSheet.getRange(i, 1, 1, portSheet.getLastColumn());
+      values = range.getValues();
+      SpreadsheetApp.setActiveSheet(paintSheet);
+      range = paintSheet.getRange(sheetTwoRow, 1, 1, 8);
+      range.setValues(values);
+      range = paintSheet.getRange(sheetTwoRow, 1);
+      range.setBackground("#ccffff");
+      range = paintSheet.getRange(sheetTwoRow, 2, 1, 5);
+      range.setBackground("#ccffcc");
+      range = paintSheet.getRange(sheetTwoRow, 7, 1, 2);
+      range.setBackground("blue");
+      range.setFontColor("yellow");
+      sheetTwoRow++;
+    }
+    SpreadsheetApp.setActiveSheet(portSheet);
